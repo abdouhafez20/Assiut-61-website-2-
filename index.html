@@ -259,7 +259,6 @@
           drawImage();
           setTimeout(() => {
             loadingSpinner.style.display = 'none';
-            canvas.scrollIntoView({ behavior: "smooth" });
             downloadBtn.style.display = 'inline-block';
             canvas.focus();
           }, 500);
@@ -324,10 +323,6 @@
     });
 
     downloadBtn.addEventListener('click', () => {
-      // Mobile guidance: some browsers block direct downloads
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        alert('إذا لم يبدأ التحميل تلقائيًا، اضغط مطولًا على الصورة واحفظها من القائمة.');
-      }
       const link = document.createElement('a');
       link.download = 'graduation_frame_61.png';
       link.href = canvas.toDataURL();
