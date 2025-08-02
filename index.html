@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graduation Frame – Batch 61 – Faculty of Medicine, Assiut University</title>
+  <!-- Cairo font for Arabic-friendly styling -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+  <!-- Graduation cap SVG for icon use -->
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='black' d='M12 3L1 9l11 6 9-4.91V17h2V9zm0 13c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z'/></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="cap-icon" aria-label="Graduation cap">
+        <!-- Inline SVG graduation cap -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 3L1 9l11 6 9-4.91V17h2V9zm0 13c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg>
+      </span>
+      <h1>
+        Graduation Frame<br>
+        <span class="subtitle">Batch 61 – Faculty of Medicine</span><br>
+        <span class="university">Assiut University</span>
+      </h1>
+      <span class="cap-icon" aria-label="Graduation cap">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 3L1 9l11 6 9-4.91V17h2V9zm0 13c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg>
+      </span>
+    </header>
+
+    <main>
+      <div class="controls">
+        <label class="upload-btn">
+          <input type="file" accept="image/*" id="photoInput" hidden>
+          <span>Upload your photo</span>
+        </label>
+      </div>
+
+      <div class="editing-area">
+        <div class="canvas-container" id="canvasContainer">
+          <!-- Photo and frame will be rendered here -->
+          <canvas id="editorCanvas" tabindex="0" aria-label="Image editing area"></canvas>
+          <!-- The transparent PNG frame (replace src with your real PNG in /frame.png) -->
+          <img id="frameOverlay" src="frame.png" alt="Graduation frame overlay" draggable="false">
+          
+          <!-- Loading indicator -->
+          <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            <p>Processing...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-buttons">
+        <button id="downloadBtn">Download</button>
+        <button id="resetBtn" class="secondary">Reset</button>
+      </div>
+
+      <div class="telegram-section">
+        <button id="telegramBtn">Telegram bot</button>
+        <div class="telegram-note">Automatically makes your frame</div>
+      </div>
+
+      <div class="footer-section">
+        <button id="supportBtn">Support</button>
+        <div class="designer-credit">Website by Abdurrahman Mahmoud</div>
+      </div>
+    </main>
+  </div>
+
+  <!-- html2canvas for image export -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
